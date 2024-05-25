@@ -1,1 +1,101 @@
 list of commands run on day1 docker
+    1  apt update -y
+    2  apt upgrade
+    3  apt update -y
+    4  apt-get tree net-tools ncal git
+    5  apt-get install tree net-tools ncal git
+    6  apt-get install git
+    7  which tree
+    8  which git
+    9  apt-get install tree
+   10  which tree
+   11  apt install ncal
+   12  sudo apt-get update
+   13  sudo apt-get install ca-certificates curl
+   14  sudo install -m 0755 -d /etc/apt/keyrings
+   15  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+   16  sudo chmod a+r /etc/apt/keyrings/docker.asc
+   17  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   18  sudo apt-get update
+   19  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   20  which docker
+   21  service docker status
+   22  systemctl status docker.service
+   23  docker container run helloworld
+   24  sudo docker run hello-world
+   25  docker container ls
+   26  docker container ls -a
+   27  docker info
+   28  docker -version
+   29  docker version
+   30  docker container run ubuntu cat /etc/os-release
+   31  docker container run nginx
+   32  docker container ls -a
+   33  docker container rm 18602f105af5
+   34  docker container ls -a
+   35  ls
+   36  history
+   37  mkdir /testing
+   38  cd testing
+   39  mkdir devops
+   40  cd devops
+   41  mkdir docker
+   42  cd docker
+   43  echo "Day 1 command run" >> commands-day1-docker
+   44  ls
+   45  git -init
+   46  git init
+   47  git remote add origin
+   48  cd ..
+   49  git init
+   50  git remote add origin https://github.com/chromazo/devops.git
+   51  git status
+   52  git .add
+   53  git add.
+   54  git add .
+   55  ls
+   56  ls -a
+   57  rm -rf . .. .git docker
+   58  ls -a
+   59  git init
+   60  git status
+   61  mkdir docker
+   62  git status
+   63  ls
+   64  echo "list of commands run on day1 docker" >> docker/day1-docker
+   65  tree
+   66  git status
+   67  git add
+   68  git add .
+   69  git status
+   70  git commit -m "Docker day1 commands commit"
+   71  git status
+   72  git log
+   73  git config --global user.name "shivam"
+   74  git config --global user.email "shivam@gmail.com"
+   75  git remote add origin https://github.com/chromazo/devops.git
+   76  git branch
+   77  git checkout docker
+   78  git branch
+   79  git branch docker
+   80  git checkout docker
+   81  git branch
+   82  git status
+   83  git push origin master
+   84  cd ..
+   85  git stats
+   86  git status
+   87  git init
+   88  git remote add origin https://github.com/chromazo/devops.git
+   89  git pull origin master
+   90  ls
+   91  git branch
+   92  cd devops
+   93  git branch
+   94  git push origin master
+   95  git push origin docker
+   96  ls
+   97  cd docker
+   98  ls
+   99  history >> day1-docker
