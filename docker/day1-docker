@@ -99,3 +99,83 @@ list of commands run on day1 docker
    97  cd docker
    98  ls
    99  history >> day1-docker
+
+========================================================
+
+[200~root@devops-test:/testing/devops/docker# docker container run -d ubuntu sleep 30
+63ab4a24422dced0f85e9617085f3ed9390c9faf581abd2113d3ee3eb4dee852
+root@devops-test:/testing/devops/docker# docker container ls
+CONTAINER ID   IMAGE     COMMAND      CREATED         STATUS         PORTS     NAMES
+63ab4a24422d   ubuntu    "sleep 30"   9 seconds ago   Up 8 seconds             objective_williamson
+root@devops-test:/testing/devops/docker# docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@devops-test:/testing/devops/docker# docker container ls -a
+CONTAINER ID   IMAGE         COMMAND                 CREATED          STATUS                          PORTS     NAMES
+63ab4a24422d   ubuntu        "sleep 30"              2 minutes ago    Exited (0) About a minute ago             objective_williamson
+7e8a97936c58   ubuntu        "cat /etc/os-release"   37 minutes ago   Exited (0) 37 minutes ago                 sleepy_poincare
+ce39983d9973   hello-world   "/hello"                39 minutes ago   Exited (0) 39 minutes ago                 zen_franklin
+
+root@devops-test:/testing/devops/docker# docker container run -d -it ubuntu /bin/bash 
+a1d70eab27c91cb0d7e5fee49753fd955a5f21efab0db54affc398eb92361883
+root@devops-test:/testing/devops/docker# docker container ls
+CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     NAMES
+a1d70eab27c9   ubuntu    "/bin/bash"   8 seconds ago   Up 8 seconds             cool_curie
+root@devops-test:/testing/devops/docker# docker container stop a1d
+a1d
+root@devops-test:/testing/devops/docker# docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@devops-test:/testing/devops/docker# docker container ls -a
+CONTAINER ID   IMAGE         COMMAND                 CREATED          STATUS                        PORTS     NAMES
+a1d70eab27c9   ubuntu        "/bin/bash"             43 seconds ago   Exited (137) 10 seconds ago             cool_curie
+63ab4a24422d   ubuntu        "sleep 30"              9 minutes ago    Exited (0) 9 minutes ago                objective_williamson
+7e8a97936c58   ubuntu        "cat /etc/os-release"   45 minutes ago   Exited (0) 45 minutes ago               sleepy_poincare
+ce39983d9973   hello-world   "/hello"                47 minutes ago   Exited (0) 47 minutes ago               zen_franklin
+root@devops-test:/testing/devops/docker# docker container run -it ubuntu /bin/bash
+root@b5017fe89973:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@b5017fe89973:/# apt install git -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package git
+root@b5017fe89973:/# exit
+exit
+root@devops-test:/testing/devops/docker# docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@devops-test:/testing/devops/docker# docker container run -it ubuntu /bin/bash
+root@cc7a291c646a:/# root@devops-test:/testing/devops/docker# docker container ls
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS          PORTS     NAMES
+cc7a291c646a   ubuntu    "/bin/bash"   13 seconds ago   Up 12 seconds             determined_vaughan
+root@devops-test:/testing/devops/docker# # to keep the container runnning even after we exit, we need to press ctrl+pq -- this will help exit the container and keep it running as we can see from above
+
+
+root@devops-test:/testing/devops/docker# docker container stop cc7a
+cc7a
+root@devops-test:/testing/devops/docker# docker container ls -a
+CONTAINER ID   IMAGE         COMMAND                 CREATED          STATUS                        PORTS     NAMES
+cc7a291c646a   ubuntu        "/bin/bash"             8 minutes ago    Exited (137) 47 seconds ago             determined_vaughan
+b5017fe89973   ubuntu        "/bin/bash"             9 minutes ago    Exited (100) 8 minutes ago              bold_ellis
+a1d70eab27c9   ubuntu        "/bin/bash"             12 minutes ago   Exited (137) 11 minutes ago             cool_curie
+63ab4a24422d   ubuntu        "sleep 30"              20 minutes ago   Exited (0) 20 minutes ago               objective_williamson
+7e8a97936c58   ubuntu        "cat /etc/os-release"   56 minutes ago   Exited (0) 56 minutes ago               sleepy_poincare
+ce39983d9973   hello-world   "/hello"                58 minutes ago   Exited (0) 58 minutes ago               zen_franklin
+root@devops-test:/testing/devops/docker# docker container ls -aq
+cc7a291c646a
+b5017fe89973
+a1d70eab27c9
+63ab4a24422d
+7e8a97936c58
+ce39983d9973
+root@devops-test:/testing/devops/docker# docker container rm $(docker container ls -aq)
+cc7a291c646a
+b5017fe89973
+a1d70eab27c9
+63ab4a24422d
+7e8a97936c58
+ce39983d9973
+root@devops-test:/testing/devops/docker# docker container ls -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+
+
+
