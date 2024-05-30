@@ -27,3 +27,4 @@ then
                 echo "system update failed"
                 exit 150
         fi
+fi
