@@ -5,7 +5,7 @@ updater=/var/log/updater.log
 error=/var/log/updater_error.log
 
 chech_exit_status() {
-    if [$? -ne 0 ]
+    if [ $? -ne 0 ]
     then
          echo "We encountered some error while updating the system. please try again"
     else
