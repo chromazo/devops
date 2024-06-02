@@ -2,7 +2,7 @@
 
 jobfile=/jobFileLogs.log
 
-echo "This job ran at $(date)" >> $jobfile
+/usr/bin/echo "This job ran at $(/usr/bin/date)" >> $jobfile
 
 
 
