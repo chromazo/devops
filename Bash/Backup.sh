@@ -17,4 +17,7 @@ then
     exit 2
 fi
 
+#Capture the current date and store it in the format YYYY-MM-DD
+current_date=$(date %Y-%m-%d)
+
 
