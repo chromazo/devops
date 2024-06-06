@@ -1,3 +1,5 @@
+//pointer is a direct reference to the memory address of a variable.
+
 package main
 
 import "fmt"
