@@ -15,4 +15,8 @@ func main() {
 
 	fmt.Println("The value of actual pointer is ", ptr)  //this will print the address of the variable where pointer is pointing
 	fmt.Println("The value of actual pointer is ", *ptr) //print the value inside the pointer reference
+
+	*ptr = *ptr + 2 //we are now referencing the value in variable "num" and adding 2 to it
+	fmt.Println(num) //The value of variable changed from 100 to 102. As the above operation was actually performed on the real variable.
+
 }
