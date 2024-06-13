@@ -10,7 +10,7 @@ Configuration files
 Playbooks
 Roles
 Modules
-Inventory management
+Inventory management.
 
 **Golang**
 Basic syntax and concepts
