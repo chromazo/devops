@@ -58,9 +58,10 @@ This repository contains a list of basic Linux commands along with their descrip
 - **`top`**: Displays real-time system information including tasks, memory usage, and CPU usage.
   - Example: `top`
 
-Help and Documentation Commands
-man: Displays the manual page for a command, providing detailed information on its usage and options.
-Example: man ls
+#### Help and Documentation Commands
+
+- **`man`**: Displays the manual page for a command, providing detailed information on its usage and options.
+  - Example: `man ls`
 
 ### Symbols
 
@@ -68,3 +69,7 @@ Example: man ls
 - **`$`**: Prompt symbol indicating commands to be executed as a normal user.
 - **`~`**: Symbol representing the home directory of the current user.
 - **`/`**: Symbol representing the root directory of the filesystem.
+
+---
+
+These commands are fundamental for navigating and managing the Linux operating system. For more detailed usage and options, refer to the man pages or official documentation for each command. This list aims to provide a quick reference for commonly used commands and their purposes.
