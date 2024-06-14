@@ -72,11 +72,6 @@ This repository contains a list of basic Linux commands along with their descrip
 
 ---
 
-These commands are fundamental for navigating and managing the Linux operating system. For more detailed usage and options, refer to the man pages or official documentation for each command. This list aims to provide a quick reference for commonly used commands and their purposes.
-
-
----
-
 ### Shell Scripting
 
 #### Shebang (`#!`)
@@ -101,3 +96,7 @@ These commands are fundamental for navigating and managing the Linux operating s
     # This is a comment
     echo "Hello, World!"  # This prints 'Hello, World!' to the terminal
     ```
+
+---
+
+These concepts are fundamental for writing and understanding shell scripts. For more detailed usage and options, refer to the man pages or official documentation for each interpreter. This list aims to provide a quick reference for commonly used concepts and their purposes.
