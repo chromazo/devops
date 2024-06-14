@@ -1,0 +1,66 @@
+# Basic Commands - Bash
+
+## Online Disclaimer of Purpose
+
+This repository contains a list of basic Linux commands along with their descriptions and usage examples. These commands are intended for educational purposes to help users familiarize themselves with common tasks in the Linux command line. The commands are suitable for both beginners and intermediate users who wish to enhance their proficiency in using the Linux operating system.
+
+### Command Categories
+
+#### Directory and Navigation Commands
+
+- **`pwd`**: Print the present working directory.
+  - Example: `pwd`
+
+- **`cd`**: Change the current directory.
+  - Example: `cd /path/to/directory`
+
+- **`cd ..`**: Go to the parent directory.
+  - Example: `cd ..`
+
+- **`cd -`**: Go to the previous directory.
+  - Example: `cd -`
+
+- **`ls`**: List files and directories.
+  - Example: `ls`
+
+#### File Management Commands
+
+- **`cat`**: Create a new file with content, view the content of a file, concatenate two files, etc.
+  - Example: `cat file.txt`
+
+- **`touch`**: Change the access time of a file or create new empty files.
+  - Example: `touch newfile.txt`
+
+- **`vi` and `nano`**: Text editors for creating and modifying files.
+  - Example: `vi file.txt`
+  - Example: `nano file.txt`
+
+- **`mkdir`**: Create a new directory.
+  - Example: `mkdir new_directory`
+
+#### System Information Commands
+
+- **`nproc`**: Displays the number of CPUs in the system.
+  - Example: `nproc`
+
+- **`lscpu`**: Provides detailed information about the CPU architecture.
+  - Example: `lscpu`
+
+- **`free -g`**: Displays the amount of free and used memory in the system in gigabytes.
+  - Example: `free -g`
+
+- **`lsblk`**: Lists information about all available or the specified block devices.
+  - Example: `lsblk`
+
+- **`df -hT`**: Displays the amount of disk space available on the filesystem in a human-readable format along with the filesystem type.
+  - Example: `df -hT`
+
+- **`top`**: Displays real-time system information including tasks, memory usage, and CPU usage.
+  - Example: `top`
+
+### Symbols
+
+- **`#`**: Prompt symbol indicating commands to be executed as the root user.
+- **`$`**: Prompt symbol indicating commands to be executed as a normal user.
+- **`~`**: Symbol representing the home directory of the current user.
+- **`/`**: Symbol representing the root directory of the filesystem.
