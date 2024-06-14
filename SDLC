@@ -1,0 +1,29 @@
+Overview
+The Software Development Lifecycle (SDLC) is a structured process used for developing software applications. The primary focus of SDLC is to enhance the efficiency and effectiveness of the software development process, ultimately improving the overall productivity of the company.
+
+SDLC Process
+When a new requirement is identified by the customer, it follows these key phases:
+
+Planning: Establishing the scope, objectives, and feasibility of the project.
+Defining (Documentation): Documenting detailed requirements and specifications.
+Designing:
+High-Level Design (HLD): Outlining the system architecture and design.
+Low-Level Design (LLD): Detailing the components and modules of the system.
+Building:
+Development: Writing and compiling the code.
+Repository Management: Managing code versions and configurations.
+Testing: Quality Engineering (QE) to ensure the software meets the required standards and functions correctly.
+Deployment: Releasing the software to the production environment.
+Role of a DevOps Engineer
+As a DevOps Engineer, the primary focus is on the following phases:
+
+Building: Ensuring efficient and effective development practices.
+Testing: Automating and managing the testing processes.
+Deployment: Overseeing the deployment of software into production.
+Automation: Automating repetitive tasks to enhance the efficiency and reliability of the development lifecycle.
+SDLC Models
+The SDLC can be implemented using various methodologies, each with its own set of advantages and use cases. The most common models include:
+
+Waterfall Model: A linear and sequential approach where each phase must be completed before the next begins.
+Iterative Model: Focuses on repeating cycles (iterations) of development and refinement.
+Agile Model: Emphasizes flexibility, collaboration, and customer feedback, with iterative and incremental development. This model is the most widely used in modern software development.
