@@ -73,3 +73,31 @@ This repository contains a list of basic Linux commands along with their descrip
 ---
 
 These commands are fundamental for navigating and managing the Linux operating system. For more detailed usage and options, refer to the man pages or official documentation for each command. This list aims to provide a quick reference for commonly used commands and their purposes.
+
+
+---
+
+### Shell Scripting
+
+#### Shebang (`#!`)
+
+- **`#!` (Shebang or Hashbang)**: The shebang is used at the beginning of a script to specify the path to the interpreter that should be used to execute the script.
+  - **Purpose**: It tells the operating system which interpreter to use to parse the rest of the script.
+  - **Example**: `#!/bin/bash`
+    - In this example, `bash` is the executable interpreter. Other possible interpreters include `sh`, `dash`, `ksh`, etc.
+    - **Popular Interpreters**:
+      - **`/bin/bash`**: The most popular and widely used interpreter.
+      - **`/bin/sh`**: Often points to `bash` in many distributions. However, in some distributions like Ubuntu, it points to `dash`, a smaller and faster shell.
+      - **`/bin/dash`**: A minimal and fast interpreter, used in systems where performance is critical.
+      - **`/bin/ksh`**: Korn shell, known for its powerful scripting capabilities.
+  - **Note**: When using `#!/bin/sh`, be aware of the specific system configuration as it might link to different interpreters depending on the distribution.
+
+#### Comments (`#`)
+
+- **`#` (Comments)**: Comments are lines in a script that are not executed. They are used to add explanations or annotations within the code.
+  - **Purpose**: To provide context and explanations for the code, making it easier to understand and maintain.
+  - **Example**:
+    ```bash
+    # This is a comment
+    echo "Hello, World!"  # This prints 'Hello, World!' to the terminal
+    ```
