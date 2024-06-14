@@ -9,59 +9,112 @@ This repository contains a list of basic Linux commands along with their descrip
 #### Directory and Navigation Commands
 
 - **`pwd`**: Print the present working directory.
-  - Example: `pwd`
+  - **Example**: 
+    ```bash
+    pwd
+    ```
+    - Output: `/home/user`
 
 - **`cd`**: Change the current directory.
-  - Example: `cd /path/to/directory`
+  - **Example**: 
+    ```bash
+    cd /path/to/directory
+    ```
 
 - **`cd ..`**: Go to the parent directory.
-  - Example: `cd ..`
+  - **Example**: 
+    ```bash
+    cd ..
+    ```
 
 - **`cd -`**: Go to the previous directory.
-  - Example: `cd -`
+  - **Example**: 
+    ```bash
+    cd -
+    ```
 
 - **`ls`**: List files and directories.
-  - Example: `ls`
+  - **Example**: 
+    ```bash
+    ls
+    ```
 
 #### File Management Commands
 
 - **`cat`**: Create a new file with content, view the content of a file, concatenate two files, etc.
-  - Example: `cat file.txt`
+  - **Example**: 
+    ```bash
+    cat file1.txt file2.txt > combined.txt
+    ```
 
 - **`touch`**: Change the access time of a file or create new empty files.
-  - Example: `touch newfile.txt`
+  - **Example**: 
+    ```bash
+    touch newfile.txt
+    ```
 
 - **`vi` and `nano`**: Text editors for creating and modifying files.
-  - Example: `vi file.txt`
-  - Example: `nano file.txt`
+  - **Example (vi)**: 
+    ```bash
+    vi file.txt
+    ```
+  - **Example (nano)**: 
+    ```bash
+    nano file.txt
+    ```
 
 - **`mkdir`**: Create a new directory.
-  - Example: `mkdir new_directory`
+  - **Example**: 
+    ```bash
+    mkdir new_directory
+    ```
 
 #### System Information Commands
 
 - **`nproc`**: Displays the number of CPUs in the system.
-  - Example: `nproc`
+  - **Example**: 
+    ```bash
+    nproc
+    ```
+    - Output: `4`
 
 - **`lscpu`**: Provides detailed information about the CPU architecture.
-  - Example: `lscpu`
+  - **Example**: 
+    ```bash
+    lscpu
+    ```
 
 - **`free -g`**: Displays the amount of free and used memory in the system in gigabytes.
-  - Example: `free -g`
+  - **Example**: 
+    ```bash
+    free -g
+    ```
 
 - **`lsblk`**: Lists information about all available or the specified block devices.
-  - Example: `lsblk`
+  - **Example**: 
+    ```bash
+    lsblk
+    ```
 
 - **`df -hT`**: Displays the amount of disk space available on the filesystem in a human-readable format along with the filesystem type.
-  - Example: `df -hT`
+  - **Example**: 
+    ```bash
+    df -hT
+    ```
 
 - **`top`**: Displays real-time system information including tasks, memory usage, and CPU usage.
-  - Example: `top`
+  - **Example**: 
+    ```bash
+    top
+    ```
 
 #### Help and Documentation Commands
 
 - **`man`**: Displays the manual page for a command, providing detailed information on its usage and options.
-  - Example: `man ls`
+  - **Example**: 
+    ```bash
+    man ls
+    ```
 
 ### Symbols
 
@@ -78,7 +131,10 @@ This repository contains a list of basic Linux commands along with their descrip
 
 - **`#!` (Shebang or Hashbang)**: The shebang is used at the beginning of a script to specify the path to the interpreter that should be used to execute the script.
   - **Purpose**: It tells the operating system which interpreter to use to parse the rest of the script.
-  - **Example**: `#!/bin/bash`
+  - **Example**: 
+    ```bash
+    #!/bin/bash
+    ```
     - In this example, `bash` is the executable interpreter. Other possible interpreters include `sh`, `dash`, `ksh`, etc.
     - **Popular Interpreters**:
       - **`/bin/bash`**: The most popular and widely used interpreter.
