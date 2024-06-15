@@ -247,6 +247,13 @@ This repository contains a list of basic Linux commands along with their descrip
     clear
     ```
 
+- **`alias`**: Create shortcuts for frequently used commands.
+  - **Command**: 
+    ```bash
+    alias c='clear'
+    ```
+  - **Usage**: Now, instead of writing `clear`, you can just use `c` to clear the terminal screen.
+
 - **`stat`**: Displays detailed information about a file or file system.
   - **Command**: 
     ```bash
@@ -273,6 +280,7 @@ This repository contains a list of basic Linux commands along with their descrip
     ```bash
     sudo apt install htop
     ```
+
 
 ---
 
