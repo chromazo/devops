@@ -177,6 +177,15 @@ File permissions are represented by a 10-character string, where the first chara
   - The next three characters (`r--`) indicate that the group (`group`) has read-only permission.
   - The final three characters (`r--`) indicate that others have read-only permission.
 
+  - **Command Example**:
+    ```bash
+    ls -l file.txt
+    ```
+  - **Expected Output**:
+    ```
+    -rw-r--r-- 1 user group 100 Jun 15 12:00 file.txt
+    ```
+
 #### Directory Permissions
 
 Directory permissions are similar to file permissions but with a slightly different interpretation.
@@ -186,6 +195,15 @@ Directory permissions are similar to file permissions but with a slightly differ
   - The next three characters (`rwx`) indicate that the owner (`user`) has read, write, and execute permissions.
   - The next three characters (`r-x`) indicate that the group (`group`) has read and execute permissions but no write permission.
   - The final three characters (`r-x`) indicate that others have read and execute permissions but no write permission.
+
+  - **Command Example**:
+    ```bash
+    ls -ld directory
+    ```
+  - **Expected Output**:
+    ```
+    drwxr-xr-x 2 user group 4096 Jun 15 12:00 directory
+    ```
 
 #### Modifying Permissions
 
@@ -212,7 +230,6 @@ Permissions can be modified using the `chmod` command, which stands for "change 
 - **Owner User (`user`)**: The user who owns the file or directory. They have full control over the file or directory and can modify permissions.
 - **Owner Group (`group`)**: The group to which the owner user belongs. Members of this group may have specific permissions assigned to them.
 - **Others**: Users who are not the owner user or part of the owner group. They have the permissions specified for "others" in the file or directory permissions.
-
 
 #### System Information Commands
 
