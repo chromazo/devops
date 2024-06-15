@@ -231,7 +231,73 @@ Permissions can be modified using the `chmod` command, which stands for "change 
 - **Owner Group (`group`)**: The group to which the owner user belongs. Members of this group may have specific permissions assigned to them.
 - **Others**: Users who are not the owner user or part of the owner group. They have the permissions specified for "others" in the file or directory permissions.
 
-#### System Information Commands
+### Disk Management
+
+#### Disk Space Usage
+
+- **`free -g`**: Displays the amount of free and used memory in the system in gigabytes.
+  - **Command**: 
+    ```bash
+    free -g
+    ```
+  - **Output**:
+    ```
+                 total        used        free      shared  buff/cache   available
+    Mem:             15           2           5           0           7           12
+    Swap:             1           0           1
+    ```
+- **df (disk free)**: Provides information about available disk space.
+  - Use without options to display disk space usage in kilobytes:
+    ```bash
+    df
+    ```
+    Example output:
+    ```
+    Filesystem     1K-blocks     Used Available Use% Mounted on
+    /dev/sda1      123456789    98765432   20482056  83% /
+    ```
+  - Use the `-h` option for human-readable output:
+    ```bash
+    df -h
+    ```
+    Example output:
+    ```
+    Filesystem      Size  Used Avail Use% Mounted on
+    /dev/sda1        118G   94G   19G  84% /
+    ```
+  - Use `-i` to check inode usage:
+    ```bash
+    df -i
+    ```
+    This is useful when a disk appears full but still has available space.
+
+  - **`lsblk`**: Lists information about all available or the specified block devices.
+  - **Command**: 
+    ```bash
+    lsblk
+    ```
+  - **Output**:
+    ```
+    NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+    sda      8:0    0  100G  0 disk 
+    ├─sda1   8:1    0   98G  0 part /
+    └─sda2   8:2    0    2G  0 part [SWAP]
+    ```
+
+- **`df -hT`**: Displays the amount of disk space available on the filesystem in a human-readable format along with the filesystem type.
+  - **Command**: 
+    ```bash
+    df -hT
+    ```
+  - **Output**:
+    ```
+    Filesystem     Type      Size  Used Avail Use% Mounted on
+    /dev/sda1      ext4       98G   21G   72G  23% /
+    ```
+
+### Process Management
+
+#### Monitoring and Managing Processes
 
 - **`nproc`**: Displays the number of CPUs in the system.
   - **Command**: 
@@ -257,47 +323,38 @@ Permissions can be modified using the `chmod` command, which stands for "change 
     ...
     ```
 
-- **`free -g`**: Displays the amount of free and used memory in the system in gigabytes.
-  - **Command**: 
-    ```bash
-    free -g
-    ```
-  - **Output**:
-    ```
-                 total        used        free      shared  buff/cache   available
-    Mem:             15           2           5           0           7           12
-    Swap:             1           0           1
-    ```
-
-- **`lsblk`**: Lists information about all available or the specified block devices.
-  - **Command**: 
-    ```bash
-    lsblk
-    ```
-  - **Output**:
-    ```
-    NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-    sda      8:0    0  100G  0 disk 
-    ├─sda1   8:1    0   98G  0 part /
-    └─sda2   8:2    0    2G  0 part [SWAP]
-    ```
-
-- **`df -hT`**: Displays the amount of disk space available on the filesystem in a human-readable format along with the filesystem type.
-  - **Command**: 
-    ```bash
-    df -hT
-    ```
-  - **Output**:
-    ```
-    Filesystem     Type      Size  Used Avail Use% Mounted on
-    /dev/sda1      ext4       98G   21G   72G  23% /
-    ```
-
 - **`top`**: Displays real-time system information including tasks, memory usage, and CPU usage.
   - **Command**: 
     ```bash
     top
     ```
+
+- **htop**: An interactive process viewer for Unix systems.
+  - Launch **htop** to view and manage running processes:
+    ```bash
+    htop
+    ```
+    Example output:
+    ```
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    1234 user     20   0 1013044  11308   7296 S   1.0   0.1   0:01.23 bash
+    5678 user     20   0  409340  78904  43240 R  25.0   1.2   0:12.34 htop
+    ```
+    Navigate with arrow keys and press **F9** to kill a process.
+
+#### System Monitoring
+
+- **uptime**: Displays system uptime and load average.
+  - Check system uptime and load average:
+    ```bash
+    uptime
+    ```
+    Example output:
+    ```
+    12:34:56 up 3 days,  4:55,  2 users,  load average: 0.15, 0.30, 0.20
+    ```
+    The load average values represent the system load over the last 1 minute, 5 minutes, and 15 minutes, respectively.
+
 
 #### Help and Documentation Commands
 
