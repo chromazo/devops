@@ -15,6 +15,12 @@ This repository contains a list of basic Linux commands along with their descrip
 
 #### Directory and Navigation Commands
 
+- **`.`**: Represents the current directory.
+  - **Command**: 
+    ```bash
+    cd .
+    ```
+
 - **`pwd`**: Print the present working directory.
   - **Command**: 
     ```bash
@@ -51,6 +57,16 @@ This repository contains a list of basic Linux commands along with their descrip
   - **Output**:
     ```
     file1.txt  file2.txt  directory1  directory2
+    ```
+
+- **`ls -a`**: List all files and directories, including hidden ones.
+  - **Command**: 
+    ```bash
+    ls -a
+    ```
+  - **Output**:
+    ```
+    .  ..  .hiddenfile  file1.txt  directory1
     ```
 
 #### File Management Commands
@@ -101,6 +117,51 @@ This repository contains a list of basic Linux commands along with their descrip
     ```bash
     mkdir new_directory
     ```
+
+- **`cp`**: Copy files or directories.
+  - **Command**: 
+    ```bash
+    cp source.txt destination.txt
+    ```
+  - **Output**: The file `source.txt` is copied to `destination.txt`.
+
+- **`diff`**: Compare the contents of two files and display the differences.
+  - **Command**: 
+    ```bash
+    diff file1.txt file2.txt
+    ```
+  - **Output**:
+    ```
+    1c1
+    < This is file1
+    ---
+    > This is file2
+    ```
+
+- **`rm`**: Remove files.
+  - **Command**: 
+    ```bash
+    rm file.txt
+    ```
+
+- **`rm -r`**: Remove directories and all their contents (be careful using this).
+  - **Command**: 
+    ```bash
+    rm -r directory_name
+    ```
+
+- **`mv`**: Move files from one directory to another or rename files.
+  - **Command**: 
+    ```bash
+    mv source.txt /path/to/destination/
+    ```
+  - **Output**: The file `source.txt` is moved to `/path/to/destination/`.
+
+  - **Command to rename a file**: 
+    ```bash
+    mv oldname.txt newname.txt
+    ```
+  - **Output**: The file `oldname.txt` is renamed to `newname.txt`.
 
 #### System Information Commands
 
@@ -243,6 +304,28 @@ This repository contains a list of basic Linux commands along with their descrip
     echo "Hello, World!"  # This prints 'Hello, World!' to the terminal
     ```
 
+#### Hidden Files and Configuration
+
+- **Hidden Files**: Any file with a prefix `.` is hidden. To list them, use `ls -a`.
+  - **Example**: 
+    ```bash
+    ls -a
+    ```
+  - **Output**:
+    ```
+    .  ..  .hiddenfile  file1.txt  directory1
+    ```
+
+- **`.bashrc`**: Configuration file for the bash shell.
+  - **Location**: 
+    ```
+    /home/user/.bashrc
+    ```
+
+- **`/etc/skel/.bashrc`**: The `.bashrc` file from the skel directory is copied to the home directory of all new users by default.
+  - **Location**: 
+    ```
+    /etc/skel/.bashrc
+    ```
 ---
 
-These concepts are fundamental for writing and understanding shell scripts. For more detailed usage and options, refer to the man pages or official documentation for each interpreter. This list aims to provide a quick reference for commonly used concepts and their purposes.
