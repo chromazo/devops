@@ -186,7 +186,7 @@ File permissions are represented by a 10-character string, where the first chara
     -rw-r--r-- 1 user group 100 Jun 15 12:00 file.txt
     ```
 
-#### Directory Permissions
+##### Directory Permissions
 
 Directory permissions are similar to file permissions but with a slightly different interpretation.
 
@@ -205,7 +205,7 @@ Directory permissions are similar to file permissions but with a slightly differ
     drwxr-xr-x 2 user group 4096 Jun 15 12:00 directory
     ```
 
-#### Modifying Permissions
+##### Modifying Permissions
 
 Permissions can be modified using the `chmod` command, which stands for "change mode". The permissions can be represented symbolically or numerically.
 
@@ -219,13 +219,13 @@ Permissions can be modified using the `chmod` command, which stands for "change 
     - This command sets the permissions to `rwx------` for the owner (`7`), and no permissions for the group and others.
     - The numeric representation is calculated by adding the values of the desired permissions (4 for read, 2 for write, 1 for execute).
 
-#### Explanation of Permissions
+##### Explanation of Permissions
 
 - **`r` (read)**: Allows viewing the contents of a file or the list of files in a directory.
 - **`w` (write)**: Allows modifying the contents of a file or creating, renaming, or deleting files in a directory.
 - **`x` (execute)**: For files, allows executing the file as a program. For directories, allows accessing files and subdirectories within the directory.
 
-#### Understanding Ownership
+##### Understanding Ownership
 
 - **Owner User (`user`)**: The user who owns the file or directory. They have full control over the file or directory and can modify permissions.
 - **Owner Group (`group`)**: The group to which the owner user belongs. Members of this group may have specific permissions assigned to them.
