@@ -1,6 +1,3 @@
-Here's the revised document with commands divided into use case categories and detailed explanations with examples. This format should be suitable for uploading to GitHub.
-
-```markdown
 # Basic Commands - Bash
 
 ## Online Disclaimer of Purpose
@@ -249,4 +246,3 @@ This repository contains a list of basic Linux commands along with their descrip
 ---
 
 These concepts are fundamental for writing and understanding shell scripts. For more detailed usage and options, refer to the man pages or official documentation for each interpreter. This list aims to provide a quick reference for commonly used concepts and their purposes.
-```
