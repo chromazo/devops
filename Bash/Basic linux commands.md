@@ -163,6 +163,57 @@ This repository contains a list of basic Linux commands along with their descrip
     ```
   - **Output**: The file `oldname.txt` is renamed to `newname.txt`.
 
+### File and Directory Permissions
+
+File and directory permissions control access to files and directories on a Unix-like operating system, determining who can read, write, and execute files or enter directories.
+
+#### File Permissions
+
+File permissions are represented by a 10-character string, where the first character indicates the file type, and the next nine characters represent the permissions for the owner, group, and others.
+
+- **`-rw-r--r--`**: Example of file permissions.
+  - The leading `-` indicates that it is a regular file.
+  - The next three characters (`rw-`) indicate that the owner (`user`) has read and write permissions, but no execute permission.
+  - The next three characters (`r--`) indicate that the group (`group`) has read-only permission.
+  - The final three characters (`r--`) indicate that others have read-only permission.
+
+#### Directory Permissions
+
+Directory permissions are similar to file permissions but with a slightly different interpretation.
+
+- **`drwxr-xr-x`**: Example of directory permissions.
+  - The leading `d` indicates that it is a directory.
+  - The next three characters (`rwx`) indicate that the owner (`user`) has read, write, and execute permissions.
+  - The next three characters (`r-x`) indicate that the group (`group`) has read and execute permissions but no write permission.
+  - The final three characters (`r-x`) indicate that others have read and execute permissions but no write permission.
+
+#### Modifying Permissions
+
+Permissions can be modified using the `chmod` command, which stands for "change mode". The permissions can be represented symbolically or numerically.
+
+- **Symbolic Representation**:
+  - Example: `chmod u+x filename`
+    - This command adds execute (`+x`) permission for the owner (`u`/`user`) of the file or directory.
+    - Multiple permissions can be combined using `+` and removed using `-`.
+
+- **Numeric Representation**:
+  - Example: `chmod 700 filename`
+    - This command sets the permissions to `rwx------` for the owner (`7`), and no permissions for the group and others.
+    - The numeric representation is calculated by adding the values of the desired permissions (4 for read, 2 for write, 1 for execute).
+
+#### Explanation of Permissions
+
+- **`r` (read)**: Allows viewing the contents of a file or the list of files in a directory.
+- **`w` (write)**: Allows modifying the contents of a file or creating, renaming, or deleting files in a directory.
+- **`x` (execute)**: For files, allows executing the file as a program. For directories, allows accessing files and subdirectories within the directory.
+
+#### Understanding Ownership
+
+- **Owner User (`user`)**: The user who owns the file or directory. They have full control over the file or directory and can modify permissions.
+- **Owner Group (`group`)**: The group to which the owner user belongs. Members of this group may have specific permissions assigned to them.
+- **Others**: Users who are not the owner user or part of the owner group. They have the permissions specified for "others" in the file or directory permissions.
+
+
 #### System Information Commands
 
 - **`nproc`**: Displays the number of CPUs in the system.
