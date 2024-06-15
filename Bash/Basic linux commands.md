@@ -405,6 +405,33 @@ Permissions can be modified using the `chmod` command, which stands for "change 
     ```bash
     sudo apt install htop
     ```
+### Package Management
+
+In Linux systems, package management is crucial for installing, updating, and removing software packages efficiently. Here's an overview of package management utilities and commands:
+
+#### Symbols
+
+- **`apt`**: The go-to package management utility for Debian and Ubuntu-based systems.
+- **`yum`**: Found in Red Hat Enterprise Linux (RHEL), CentOS, and Fedora distributions.
+
+#### Updating Packages
+
+- **`sudo apt update`**: Refreshes the local package index with the latest information from central repositories.
+- **`sudo apt upgrade`**: Updates packages to their latest versions without altering dependencies.
+- **`sudo apt dist-upgrade`**: Upgrades packages, including necessary dependency changes.
+
+#### System Maintenance
+
+- **`sudo reboot`**: Initiates a system reboot, recommended after updates to apply security patches effectively.
+
+#### Package Installation and Removal
+
+- **`apt search`**: Searches the local package cache for specific packages.
+- **`sudo apt install <package>`**: Installs new packages.
+- **`sudo apt remove <package>`**: Uninstalls a package.
+- **`sudo apt autoremove`**: Clears out unused package dependencies.
+
+By utilizing these commands, users can efficiently manage software packages, ensuring their systems are up-to-date and secure.
 
 
 ---
