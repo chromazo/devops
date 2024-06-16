@@ -519,23 +519,38 @@ By using these commands, you can efficiently manage services on your Linux syste
 ## Viewing Log Files
 
 - `head <file name>`: Displays the first 10 lines of a file.
-  - Example: `head syslog`
+  - **Command**:
+    ```bash
+    head syslog
+    ```
   - Expected Output: Displays the first 10 lines of the syslog file.
 
 - `tail <file name>`: Displays the last 10 lines of a file.
-  - Example: `tail syslog`
+  - **Command**:
+    ```bash
+    tail syslog
+    ```
   - Expected Output: Displays the last 10 lines of the syslog file.
 
 - `head -n 50 <file name>`: Displays the first 50 lines of a file.
-  - Example: `head -n 50 syslog`
+  - **Command**:
+    ```bash
+    head -n 50 syslog
+    ```
   - Expected Output: Displays the first 50 lines of the syslog file.
 
 - `tail -f <file name>`: Follows the logs in real-time for troubleshooting.
-  - Example: `tail -f syslog`
+  - **Command**:
+    ```bash
+    tail -f syslog
+    ```
   - Expected Output: Continuously displays new lines appended to the syslog file in real-time.
 
 - `journalctl -u <unit/service name>`: Shows all logs related to the given unit or service. Use `-f` to follow the logs in real-time with `journalctl`. It is part of systemd.
-  - Example: `journalctl -u apache2`
+  - **Command**:
+    ```bash
+    journalctl -u apache2
+    ```
   - Expected Output: Displays logs related to the Apache2 service.
 
 
