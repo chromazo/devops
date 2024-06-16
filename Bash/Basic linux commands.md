@@ -433,6 +433,81 @@ In Linux systems, package management is crucial for installing, updating, and re
 
 By utilizing these commands, users can efficiently manage software packages, ensuring their systems are up-to-date and secure.
 
+### Service Management with systemd
+
+`systemd` is a service manager for Linux operating systems. It provides a robust and efficient way to manage system services.
+
+#### Command Line Tool: `systemctl`
+
+`systemctl` is the command-line utility that interacts with `systemd` to manage services.
+
+#### Checking Service Status
+
+- **`systemctl status <service>`**: Checks the status of a service.
+  - **Command**:
+    ```bash
+    systemctl status apache2
+    ```
+  - **Expected Output**:
+    ```bash
+    ● apache2.service - The Apache HTTP Server
+       Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+       Active: active (running) since Wed 2023-06-16 14:23:15 UTC; 1h 45min ago
+     Main PID: 1234 (apache2)
+        Tasks: 6 (limit: 4915)
+       Memory: 13.3M
+       CGroup: /system.slice/apache2.service
+               ├─1234 /usr/sbin/apache2 -k start
+               ├─5678 /usr/sbin/apache2 -k start
+               └─9101 /usr/sbin/apache2 -k start
+    ```
+
+#### Enabling and Disabling Services
+
+- **`sudo systemctl disable <service>`**: Disables a service so it will not start automatically on boot.
+  - **Command**:
+    ```bash
+    sudo systemctl disable apache2
+    ```
+  - **Expected Output**:
+    ```bash
+    Synchronizing state of apache2.service with SysV service script with /lib/systemd/systemd-sysv-install.
+    Disabling apache2.service, created symlink /etc/systemd/system/apache2.service → /dev/null.
+    ```
+
+- **`sudo systemctl enable <service>`**: Enables a service to start automatically on boot.
+  - **Command**:
+    ```bash
+    sudo systemctl enable apache2
+    ```
+  - **Expected Output**:
+    ```bash
+    Synchronizing state of apache2.service with SysV service script with /lib/systemd/systemd-sysv-install.
+    Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /lib/systemd/system/apache2.service.
+    ```
+
+#### Starting and Stopping Services
+
+- **`sudo systemctl stop <service>`**: Stops a running service.
+  - **Command**:
+    ```bash
+    sudo systemctl stop apache2
+    ```
+
+- **`sudo systemctl start <service>`**: Starts a service.
+  - **Command**:
+    ```bash
+    sudo systemctl start apache2
+    ```
+
+- **`sudo systemctl restart <service>`**: Restarts a service.
+  - **Command**:
+    ```bash
+    sudo systemctl restart apache2
+    ```
+
+By using these commands, you can efficiently manage services on your Linux system, ensuring they start, stop, and restart as needed.
+
 
 ---
 
