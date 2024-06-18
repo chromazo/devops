@@ -1,3 +1,6 @@
+Sure! Here is the content with explanations for each command in the `.gitlab-ci.yml` file, formatted in Markdown:
+
+```markdown
 # GitLab CI/CD Documentation
 
 ## Overview
@@ -12,29 +15,100 @@ To create a pipeline in GitLab, follow these steps:
 - The pipeline configuration is defined in a file named `.gitlab-ci.yml` located in the root directory of your repository.
 - This configuration file is based on YAML syntax.
 
+### Explanation of Commands
+
+#### `stages`
+- **Definition**: Defines the different stages of the pipeline.
+- **Usage**: Lists the stages in the order they should be executed.
+- **Example**:
+
 ```yaml
 stages:
   - build
   - test
   - deploy
+```
 
+#### `script`
+- **Definition**: Specifies the commands to be executed by the runner.
+- **Usage**: Contains the actual shell commands to run for each job.
+- **Example**:
+
+```yaml
 build_job:
   stage: build
   script:
     - echo "Building the application"
+```
 
-test_job:
-  stage: test
+#### `stage`
+- **Definition**: Assigns a specific stage to a job.
+- **Usage**: Helps to organize jobs into stages.
+- **Example**:
+
+```yaml
+build_job:
+  stage: build
   script:
-    - echo "Running tests"
+    - echo "Building the application"
+```
 
+#### `artifacts`
+- **Definition**: Defines the files or directories to be passed between jobs and stored as artifacts.
+- **Usage**: Specifies the paths to the files or directories.
+- **Example**:
+
+```yaml
+build_job:
+  stage: build
+  script:
+    - echo "Compiling the application"
+    - mkdir -p output
+    - echo "Binary file" > output/binary
+  artifacts:
+    paths:
+      - output/
+```
+
+#### `when`
+- **Definition**: Specifies when a job should run.
+- **Usage**: Can be set to `on_success`, `on_failure`, `always`, or `manual`.
+- **Example**:
+
+```yaml
 deploy_job:
   stage: deploy
   script:
     - echo "Deploying the application"
   when: manual
-Got it! Here is the entire content in Markdown format with proper headings, bold text, and bullet points:
+```
 
+#### `image`
+- **Definition**: Defines the Docker image to be used for the job.
+- **Usage**: Specifies the Docker image in which the job runs.
+- **Example**:
+
+```yaml
+image: python:latest
+
+stages:
+  - test
+
+test_job:
+  stage: test
+  script:
+    - python --version
+    - echo "Running Python tests"
+```
+
+#### `variables`
+- **Definition**: Defines custom environment variables for jobs.
+- **Usage**: Used to specify variables that can be accessed within scripts.
+- **Example**:
+
+```yaml
+variables:
+  TEST_VAR: "This is a test variable"
 ```
 
 ### 2. Artifacts
