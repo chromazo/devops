@@ -1,6 +1,3 @@
-Sure! Here is the content with explanations for each command in the `.gitlab-ci.yml` file, formatted in Markdown:
-
-```markdown
 # GitLab CI/CD Documentation
 
 ## Overview
