@@ -7,7 +7,7 @@ This repository contains a list of basic Linux commands along with their descrip
 ### Symbols
 
 - **`#`**: Prompt symbol indicating commands to be executed as the root user.
-- **`$`**: Prompt symbol indicating commands to be executed as a normal user
+- **`$`**: Prompt symbol indicating commands to be executed as a normal user.
 - **`~`**: Symbol representing the home directory of the current user.
 - **`/`**: Symbol representing the root directory of the filesystem.
 
