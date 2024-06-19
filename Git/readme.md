@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository is designed as a comprehensive guide to learning Git, a distributed version control system. It includes detailed documentation and examples of various Git commands and workflows.
+This folder is designed as a comprehensive guide to learning Git, a distributed version control system. It includes detailed documentation and examples of various Git commands and workflows.
 
 ## Content
 
