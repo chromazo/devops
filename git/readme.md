@@ -6,7 +6,7 @@ This repository is designed as a comprehensive guide to learning Git, a distribu
 
 ## Content
 
-- [Git Documentation](devops/git/GitGuide.md): Detailed guide on using Git, including explanations of concepts, commands, and workflows.
+- [Git Documentation](GitGuide.md): Detailed guide on using Git, including explanations of concepts, commands, and workflows.
 
 ## Purpose
 
@@ -32,7 +32,7 @@ To get started with Git, follow these steps:
     ```
 
 3. **Read the Git documentation**:
-    Open the [Git Documentation](devops/git/GitGuide.md) file for a detailed guide on using Git.
+    Open the [Git Documentation](GitGuide.md) file for a detailed guide on using Git.
 
 ## Basic Git Commands
 
