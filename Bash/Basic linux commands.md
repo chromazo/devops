@@ -1,6 +1,6 @@
 # Basic Commands - Bash
 
-## Online Disclaimer of Purpose.
+## Online Disclaimer of Purpose
 
 This repository contains a list of basic Linux commands along with their descriptions, usage examples, and expected outputs. These commands are intended for educational purposes to help users familiarize themselves with common tasks in the Linux command line. The commands are suitable for both beginners and intermediate users who wish to enhance their proficiency in using the Linux operating system.
 
