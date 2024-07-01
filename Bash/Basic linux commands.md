@@ -553,6 +553,384 @@ By using these commands, you can efficiently manage services on your Linux syste
     ```
   - **Expected Output**: Displays logs related to the Apache2 service.
 
+Certainly! Below is a detailed explanation of each command with examples and expected output, formatted in GitHub Markdown.
+
+```markdown
+# Useful Linux Commands
+
+## Sorting and Uniqueness
+
+### Sort
+```sh
+sort file.txt
+```
+**Example Output:**
+```
+apple
+banana
+cherry
+date
+```
+
+### Reverse Sort
+```sh
+sort -r file.txt
+```
+**Example Output:**
+```
+date
+cherry
+banana
+apple
+```
+
+### Unique Values
+```sh
+sort file.txt | uniq
+```
+**Example Output:**
+```
+apple
+banana
+cherry
+date
+```
+
+## Searching and Comparing Files
+
+### Grep
+```sh
+grep "word" filename.txt
+```
+**Example Output:**
+```
+This is the word you are searching for.
+```
+
+### Extended Grep
+```sh
+egrep "egg|mango" filename.txt
+```
+**Example Output:**
+```
+I like eggs.
+I like mangoes.
+```
+
+### Compare Files
+```sh
+cmp file1.txt file2.txt
+```
+**Example Output:**
+```
+file1.txt file2.txt differ: byte 1, line 1
+```
+
+### Diff Files
+```sh
+diff -u file1.txt file2.txt
+```
+**Example Output:**
+```diff
+--- file1.txt 2021-01-01 12:00:00.000000000 +0000
++++ file2.txt 2021-01-01 12:00:00.000000000 +0000
+@@ -1 +1 @@
+-Hello World
++Hello Everyone
+```
+
+## File and Directory Operations
+
+### Find File
+```sh
+find /path -name filename.txt
+```
+**Example Output:**
+```
+/path/to/filename.txt
+```
+
+### Locate File
+```sh
+locate filename.txt
+```
+**Example Output:**
+```
+/path/to/filename.txt
+```
+
+### Update Locate Database
+```sh
+sudo updatedb
+```
+
+## System Monitoring and Management
+
+### Command History
+```sh
+history
+```
+**Example Output:**
+```
+1  ls
+2  cd /home
+3  mkdir new_folder
+...
+```
+
+### Uptime
+```sh
+uptime
+```
+**Example Output:**
+```
+12:34:56 up 10 days,  2:31,  1 user,  load average: 0.00, 0.01, 0.05
+```
+
+### System Architecture
+```sh
+arch
+```
+**Example Output:**
+```
+x86_64
+```
+
+### List Processes
+```sh
+ps -ef
+```
+**Example Output:**
+```
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 12:00 ?        00:00:01 /sbin/init
+root         2     0  0 12:00 ?        00:00:00 [kthreadd]
+...
+```
+
+### Search Process by Name
+```sh
+pgrep sshd
+```
+**Example Output:**
+```
+1234
+5678
+```
+
+### Kill Process by PID
+```sh
+kill -9 1234
+```
+
+### Kill Process by Name
+```sh
+pkill sshd
+```
+
+### List Jobs
+```sh
+jobs
+```
+**Example Output:**
+```
+[1]+  Stopped                 nano
+```
+
+### Background Job
+```sh
+bg 1
+```
+
+### Foreground Job
+```sh
+fg 1
+```
+
+## Network Operations
+
+### Network Interface Configuration
+```sh
+ifconfig
+```
+**Example Output:**
+```
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.2  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::1a2b:3c4d:5e6f  prefixlen 64  scopeid 0x20<link>
+        ether 00:1a:2b:3c:4d:5e  txqueuelen 1000  (Ethernet)
+        RX packets 123456  bytes 123456789 (123.4 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 123456  bytes 123456789 (123.4 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
+### Ping
+```sh
+ping google.com
+```
+**Example Output:**
+```
+PING google.com (172.217.14.238) 56(84) bytes of data.
+64 bytes from lax17s05-in-f14.1e100.net (172.217.14.238): icmp_seq=1 ttl=53 time=11.4 ms
+64 bytes from lax17s05-in-f14.1e100.net (172.217.14.238): icmp_seq=2 ttl=53 time=10.8 ms
+...
+```
+
+### Telnet
+```sh
+telnet 192.168.1.1 80
+```
+**Example Output:**
+```
+Trying 192.168.1.1...
+Connected to 192.168.1.1.
+Escape character is '^]'.
+```
+
+### Network Statistics
+```sh
+netstat -putan | grep 80
+```
+**Example Output:**
+```
+tcp        0      0 0.0.0.0:80            0.0.0.0:*               LISTEN      1234/nginx: master
+```
+
+### Traceroute
+```sh
+traceroute google.com
+```
+**Example Output:**
+```
+traceroute to google.com (172.217.14.238), 30 hops max, 60 byte packets
+ 1  192.168.1.1 (192.168.1.1)  0.350 ms  0.282 ms  0.260 ms
+ 2  10.0.0.1 (10.0.0.1)  1.359 ms  1.320 ms  1.306 ms
+ ...
+```
+
+## System Management
+
+### List Systemd Services
+```sh
+systemctl list-units --type=service --all
+```
+**Example Output:**
+```
+  UNIT                         LOAD      ACTIVE   SUB     DESCRIPTION
+  accounts-daemon.service      loaded    active   running Accounts Service
+  alsa-restore.service         loaded    inactive dead    Save/Restore Sound Card State
+  alsa-state.service           loaded    inactive dead    Manage Sound Card State (restore and store)
+...
+```
+
+## Package Management
+
+### List Installed RPM Packages
+```sh
+rpm -qa | grep app
+```
+**Example Output:**
+```
+application-1.2.3-1.el7.x86_64
+```
+
+### List Installed DNF Packages
+```sh
+dnf list installed
+```
+**Example Output:**
+```
+Installed Packages
+NetworkManager.x86_64                        1:1.22.8-4.el8                         @BaseOS
+adobe-mappings-cmap.noarch                   20171205-3.el8                         @AppStream
+adobe-mappings-cmap-deprecated.noarch        20171205-3.el8                         @AppStream
+...
+```
+
+### Search APT Packages
+```sh
+apt search package
+```
+**Example Output:**
+```
+Sorting... Done
+Full Text Search... Done
+package/stable 1.2.3-1 amd64
+  Description of the package
+```
+
+### List Available YUM Packages
+```sh
+yum list available
+```
+**Example Output:**
+```
+Available Packages
+package.x86_64                          1.2.3-1.el7                          base
+```
+
+## Utility Commands
+
+### Alias
+```sh
+alias ll='ls -la'
+```
+
+### Script
+```sh
+script
+```
+**Example Output:**
+```
+Script started, file is typescript
+```
+
+### Wget
+```sh
+wget http://example.com/file
+```
+**Example Output:**
+```
+--2021-01-01 12:00:00--  http://example.com/file
+Resolving example.com (example.com)... 93.184.216.34
+Connecting to example.com (example.com)|93.184.216.34|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 12345 (12K) [text/plain]
+Saving to: ‘file’
+
+file                100%[===================>]  12.05K  --.-KB/s    in 0s
+
+2021-01-01 12:00:00 (123 MB/s) - ‘file’ saved [12345/12345]
+```
+
+### Curl
+```sh
+curl http://example.com
+```
+**Example Output:**
+```
+<!doctype html>
+<html>
+<head>
+<title>Example Domain</title>
+...
+</html>
+```
+
+## System Reboot and Shutdown
+
+### Reboot
+```sh
+reboot
+```
+
+### Shutdown
+```sh
+shutdown
+```
+```
+```
 
 ---
 
