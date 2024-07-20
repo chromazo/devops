@@ -9,8 +9,9 @@
 # Version: v1
 #####################
 #set -x #debug mode
-set -e  #exit the script when there is an error. Note: does not work with pipe
-set -o pipefail
+set -e  #exit the script when there is an error. Note: does not work with pipe(It only check the last command in the pipe and if it works it will not throw any error)
+set -o pipefail  #To check error in pipe command
+
 echo "Total number of CPU's:" $(nproc)
 echo "CPU details:\n"
 lscpu
