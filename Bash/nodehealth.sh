@@ -9,7 +9,7 @@
 # Version: v1
 #####################
 #set -x #debug mode
-set -e  #exit the script when there is an error
+set -e  #exit the script when there is an error. Note: does not work with pipe
 set -o pipefail
 echo "Total number of CPU's:" $(nproc)
 echo "CPU details:\n"
