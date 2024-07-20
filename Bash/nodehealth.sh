@@ -9,6 +9,8 @@
 # Version: v1
 #####################
 #set -x #debug mode
+set -e  #exit the script when there is an error
+set -o pipefail
 echo "Total number of CPU's:" $(nproc)
 echo "CPU details:\n"
 lscpu
@@ -27,3 +29,7 @@ uptime
 
 echo "\n\nLogged in users:\n"
 w
+echo "\n\n"
+
+ps -ef | grep sbin | awk -F" " '{print $2}'
+
