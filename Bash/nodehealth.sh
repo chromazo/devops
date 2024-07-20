@@ -8,7 +8,7 @@
 #
 # Version: v1
 #####################
-set -x #debug mode
+#set -x #debug mode
 echo "Total number of CPU's:" $(nproc)
 echo "CPU details:\n"
 lscpu
