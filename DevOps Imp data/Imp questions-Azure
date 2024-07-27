@@ -1,13 +1,13 @@
 #Azure script interview questions
 
 ---Networking
-- What is the difference between NSG and ASG
-- How allow only a particular subnet with vnet to access a server in the vnet.
-- How to secure a vnet in Azure
-- What is difference between Appication gateway and load balancer in Azure?
-- What are the layer 4 and layer 7 load balancers in Azure
-- Azure firewall
+  - What is the difference between NSG and ASG
+  - How allow only a particular subnet with vnet to access a server in the vnet.
+  - How to secure a vnet in Azure
+  - What is difference between Appication gateway and load balancer in Azure?
+  - What are the layer 4 and layer 7 load balancers in Azure
+  - Azure firewall
 
 
 ---Azure Storage service
-- What blobs,filehshare,tables,queues used for?
+  - What blobs,filehshare,tables,queues used for?
