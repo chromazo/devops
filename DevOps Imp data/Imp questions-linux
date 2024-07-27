@@ -1,0 +1,7 @@
+#shell script interview questions
+- shell, python are dynamically typed language
+- types of loops in shell: while, until, for
+- what is soft link, hard link, crontab, break, continue, log rotate
+- use vi -r <file name> to open file in read only mode
+- what is set -x/e/o/u
+- n/w troubleshooting utility: traceroute(no. of hops between source and destination, and time taken for each hops), tracepath
