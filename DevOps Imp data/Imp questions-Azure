@@ -11,3 +11,6 @@
 
 ---Azure Storage service
   - What blobs,filehshare,tables,queues used for?
+
+---Azure Resource Manager(ARM)
+  - Important for Standardization, creates resources in Azure
