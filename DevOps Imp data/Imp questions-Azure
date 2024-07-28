@@ -14,3 +14,9 @@
 
 ---Azure Resource Manager(ARM)
   - Important for Standardization, creates resources in Azure
+
+Ways to create azure/manage resources--> Azure portal, Azure CLI, Azure Bicep, Azure SDK, ARM templates(Azure service to create resources)
+
+---Azure Resource Manager(ARM) templates
+  - Service by Azure to create resource
+  - In JSON format
