@@ -21,3 +21,5 @@ Ways to create azure/manage resources--> Azure portal, Azure CLI, Azure Bicep, A
   - Service by Azure to create resource
   - In JSON format
   - Use azure cli, or portal - Custom template deployment in azure portal to deploy templates.
+
+Azure DevOps link --> dev.azure.com
