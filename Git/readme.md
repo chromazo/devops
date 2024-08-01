@@ -72,7 +72,7 @@ Here's a quick reference to some basic Git commands:
 - **Reset changes**:
   To reset to a previous version we need to know the commit ID of that version
  ```bash
-    git reset --hard <commit id>"
+    git reset --hard "<commit id>"
     ```
 
 
