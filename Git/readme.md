@@ -69,6 +69,13 @@ Here's a quick reference to some basic Git commands:
     git commit -m "Your commit message"
     ```
 
+- **Reset changes**:
+  To reset to a previous version we need to know the commit ID of that version
+ ```bash
+    git reset --hard <commit id>"
+    ```
+
+
 ## Contributing
 
 If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
