@@ -1,3 +1,7 @@
 github integration
 -- methods - API. CLI
 
+Types of branches
+-Master  --> main branch of a repositoy
+-feature --> branch made to work on specific feature without affecting master branch
+-release --> releasing the code/application/product to the customer
