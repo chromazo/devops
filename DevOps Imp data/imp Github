@@ -5,3 +5,4 @@ Types of branches
 -Master  --> main branch of a repositoy
 -feature --> branch made to work on specific feature without affecting master branch
 -release --> releasing the code/application/product to the customer
+-hotfix  --> deliver critical fixes on application, quick delivery to customer. Code is save in both             master branch and release branch.
