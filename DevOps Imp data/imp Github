@@ -3,7 +3,7 @@ github integration
 
 To initialize git in linux reun command 'git init'
 a '.git' folder will be created which tracks all git activity
-'git add' is use to track a file, o
+'git add' is use to track a file, tracking only works when files are added using this command
 
 Types of branches
 -Master  --> main branch of a repositoy
