@@ -3,11 +3,12 @@ github integration
 
 To initialize git in linux reun command 'git init'
 a '.git' folder will be created which tracks all git activity
+'git add' is use to track a file, o
 
 Types of branches
 -Master  --> main branch of a repositoy
 -feature --> branch made to work on specific feature without affecting master branch
 -release --> releasing the code/application/product to the customer
--hotfix  --> deliver critical fixes on application, quick delivery to customer. Code is save in both             master branch and release branch.
+-hotfix  --> deliver critical fixes on application, quick delivery to customer. Code is save in both master branch and release branch.
 
 All the changes made in the feature,hot fixes branches must be cascaded back to master branch. Master should always be up-to-date.
