@@ -5,6 +5,8 @@ To initialize git in linux reun command 'git init'
 a '.git' folder will be created which tracks all git activity
 'git add' is use to track a file, tracking only works when files are added using this command
 'git remote -v' to git detail of remote repo
+'git checkout -b <branch name>' , 'git branch <branch name>'  --> to create new branch
+'git cherry-pick', merge and rebase
 
 Types of branches
 -Master  --> main branch of a repositoy
