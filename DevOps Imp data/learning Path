@@ -7,7 +7,7 @@
 --Configuration management --> Ansible
 --Infrastructure Automation --> Terraform
 --Containerization --> Docker
---Kubernetes --> container orchestration
+--Kubernetes --> container orchestration 
 
 
 CI/CD projects
