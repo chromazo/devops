@@ -23,5 +23,6 @@ Ansible -
 --- agentless mechanism
 --- inventory/Dynamic inventory
 --- YAML
+--- can write own Ansible modules
 --- windows/Linux support
 cons: debugging, issues with performance, windows
