@@ -15,19 +15,17 @@
 
 tools: Puppet, Chef, Ansible(Redhat managed, most used)
 
-why Ansible??
 Puppet - 
 --- pull mechanism
 --- Master-slave/master-agent
 --- Puppet language
 
-Ansible - 
---- push mechanism --> write playbook on one device and push it on all instances
---- agentless mechanism
---- inventory/Dynamic inventory
---- YAML
---- can write own Ansible modules
---- windows/Linux support
+Why Ansible over others?
+Ansible uses push mechanism model. Write Ansible script at one instance and update all the worker nodes. Ansible is agentless, just put DNS or ip adress of servers in inventory file and have ssh password-less authentication configured, along with python3 installed by default in Linux distros. 
+2. Ansible also has feature of dynamic inventory. If you are creating 100s of servers in AWS cloud,  Ansible will automatically detect new server.
+3. Support both Windows, AIX and Linux all distros
+4. Ansible is pretty simple, uses simple yaml manifest.
+5. can write own Ansible modules
 cons: debugging, issues with performance, windows
 
 Interview questions
