@@ -29,3 +29,7 @@ Ansible -
 --- can write own Ansible modules
 --- windows/Linux support
 cons: debugging, issues with performance, windows
+
+Interview questions
+-what is the programming language which ansible use --> python
+-does ansible support windows, Linux? yes supports both windows(protocol - win RM), Linux(protocol - SSH) 
