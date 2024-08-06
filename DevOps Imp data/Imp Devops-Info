@@ -31,5 +31,9 @@ Ansible -
 cons: debugging, issues with performance, windows
 
 Interview questions
--what is the programming language which ansible use --> python
--does ansible support windows, Linux? yes supports both windows(protocol - win RM), Linux(protocol - SSH) 
+- what is the programming language which ansible use --> python
+- does ansible support windows, Linux? yes supports both windows(protocol - win RM), Linux(protocol - SSH) 
+- difference between puppet/chef and Ansible or why we chose Ansible over other configuration management tools
+- is ansible push or pull mechanism --> Push mechanism
+- what language ansible uses to write playbook - YAML
+- Does Ansible supports all cloud provider? cloud provider doesn't matter, we require public access/SSH connection is allowed from ansible to the machine(win RM in windows)
