@@ -10,4 +10,4 @@
 
 ##  Configuration management
 
-tools: Puppet, Chef, Ansible
+tools: Puppet, Chef, Ansible(Redhat managed, most used)
