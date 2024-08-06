@@ -11,3 +11,17 @@
 ##  Configuration management
 
 tools: Puppet, Chef, Ansible(Redhat managed, most used)
+
+why Ansible??
+
+puppet - 
+--- pull mechanism
+--- Master-slave/master-agent
+--- Puppet language
+
+ansible - 
+--- push mechanism --> write playbook on one device and push it on all instances
+--- agentless mechanism
+--- inventory/Dynamic inventory
+--- YAML
+--- windows/Linux support
