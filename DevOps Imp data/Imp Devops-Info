@@ -7,3 +7,7 @@
 -Testing
 -Deployment
 -Monitoring
+
+##  Configuration management
+
+tools: Puppet, Chef, Ansible
