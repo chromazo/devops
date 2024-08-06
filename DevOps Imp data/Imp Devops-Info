@@ -25,3 +25,4 @@ ansible -
 --- inventory/Dynamic inventory
 --- YAML
 --- windows/Linux support
+cons: debugging, issues with performance, windows
