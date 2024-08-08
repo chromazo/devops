@@ -5,4 +5,6 @@ uses push mechanism, agentless, uses YAML manisfest, easy to use, support linux(
 how to install ansible: easy way use package manager of the linux distro. eg for ubuntu: sudo apt-get install ansible
 to generate ssh key: ssh-keygen
 
-keys will be used to configure passwodless authentication with target machine
+keys will be used to configure passwodless authentication with target machine. the target machine should have the public key of the main machine in its /root/.ssh/autorised_keys. This could be in root or home. 
+never to share private key with anyone, if needed to connect use public key.
+In azure while creating vm's we can use the same public key on all servers.
