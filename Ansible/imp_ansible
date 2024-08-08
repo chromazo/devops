@@ -8,3 +8,5 @@ to generate ssh key: ssh-keygen
 keys will be used to configure passwodless authentication with target machine. the target machine should have the public key of the main machine in its /root/.ssh/autorised_keys. This could be in root or home. 
 never to share private key with anyone, if needed to connect use public key.
 In azure while creating vm's we can use the same public key on all servers.
+
+check ansible version: ansible --version
