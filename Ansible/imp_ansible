@@ -11,3 +11,6 @@ In azure while creating vm's we can use the same public key on all servers.
 
 check ansible version: ansible --version
 Ansible playbooks are like shell scripts, they are the files.
+
+inventory file: file which store IP address of target servers.
+
