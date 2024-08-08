@@ -1,0 +1,8 @@
+Configuration management system
+
+uses push mechanism, agentless, uses YAML manisfest, easy to use, support linux(SSH protocol); windows(winRM protocol). uses Python
+
+how to install ansible: easy way use package manager of the linux distro. eg for ubuntu: sudo apt-get install ansible
+to generate ssh key: ssh-keygen
+
+keys will be used to configure passwodless authentication with target machine
