@@ -13,4 +13,5 @@ check ansible version: ansible --version
 Ansible playbooks are like shell scripts, they are the files.
 
 inventory file: file which store IP address of target servers.
+by default ansible stores the inventory file in /etc/ansible/hosts , but we can create and store inventory file in any location we want. 
 
