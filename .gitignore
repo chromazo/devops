@@ -5,4 +5,8 @@
 .profile
 .ssh/
 .sudo_as_admin_successful
+.gitconfig
+y
+y.pub
 inventory
+.viminfo
