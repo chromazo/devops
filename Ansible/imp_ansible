@@ -10,3 +10,4 @@ never to share private key with anyone, if needed to connect use public key.
 In azure while creating vm's we can use the same public key on all servers.
 
 check ansible version: ansible --version
+Ansible playbooks are like shell scripts, they are the files.
