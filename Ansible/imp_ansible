@@ -11,6 +11,7 @@ In azure while creating vm's we can use the same public key on all servers.
 
 check ansible version: ansible --version
 Ansible playbooks are like shell scripts, they are the files.
+no need to always like playbooks, we could run ansible commands from the CLI(Ansible adhoc commands) it depends on the task
 
 inventory file: file which store IP address of target servers.
 by default ansible stores the inventory file in /etc/ansible/hosts , but we can create and store inventory file in any location we want. 
