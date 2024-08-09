@@ -1,6 +1,10 @@
 Configuration management system
 
 uses push mechanism, agentless, uses YAML manisfest, easy to use, support linux(SSH protocol); windows(winRM protocol). uses Python
+ansible is used for configuration management, ci/cd, resource provisioning, network automation. so ansible is a automation platform
+main server is called - control node and target servers are called managed nodes
+
+we can write ansible on vs code ide, need to have YAML,ansible extension
 
 how to install ansible: easy way use package manager of the linux distro. eg for ubuntu: sudo apt-get install ansible
 to generate ssh key: ssh-keygen
