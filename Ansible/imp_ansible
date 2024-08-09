@@ -37,3 +37,11 @@ eg: in the inventory file
 [dbserver]
 10.0.0.3
 
+playbook format: playbook_name.yml
+
+how to run playbook: ansible-playbook -i <inventory_path> <playbook_name>
+with verbose: ansible-playbook -i -v <inventory_path> <playbook_name>
+
+ansible roles
+ansible-galaxy role init Kubernetes  --> Kubernetes folder will be created with many subfolder imp for a playbook segregation
+
