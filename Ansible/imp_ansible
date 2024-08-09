@@ -49,3 +49,5 @@ with verbose: ansible-playbook -i -v <inventory_path> <playbook_name>
 ansible roles
 ansible-galaxy role init Kubernetes  --> Kubernetes folder will be created with many subfolder imp for a playbook segregation
 
+
+
