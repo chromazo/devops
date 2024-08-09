@@ -16,3 +16,24 @@ no need to always like playbooks, we could run ansible commands from the CLI(Ans
 inventory file: file which store IP address of target servers.
 by default ansible stores the inventory file in /etc/ansible/hosts , but we can create and store inventory file in any location we want. 
 
+ad hoc command:
+ansible -i <inventory file path> <target IP address> -m "shell" -a "touch newfile"
+eg: ansible -i /home/inventory 10.0.0.1 -m "shell" -a "touch newfile" 
+or ansible -i /home/inventory all -m "shell" -a "touch newfile" 
+here a= arguments, m= module
+
+--  ansible -i /home/azadmin/Ansible/inventory 10.0.0.5 -m "shell" -a "df -hT"
+--  ansible -i /home/azadmin/Ansible/inventory 10.0.0.5 -m "shell" -a "free -h"
+--  ansible -i /home/azadmin/Ansible/inventory 10.0.0.5 -m "shell" -a "nproc"
+
+search ansible modules, to get info of all the modules in ansible
+
+-- how to group target vm's or how to perform task on certain vm's only
+  do grouping in inventory file by using []
+eg: in the inventory file
+[webserver]
+10.0.0.1
+10.0.0.2
+[dbserver]
+10.0.0.3
+
