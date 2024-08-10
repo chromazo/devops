@@ -20,6 +20,8 @@
    - [Ad Hoc Commands](#ad-hoc-commands)
    - [Playbooks](#playbooks)
    - [Ansible Roles](#ansible-roles)
+     - [Installing Roles from Ansible Galaxy](#installing-roles-from-ansible-galaxy)
+     - [Uploading Roles to Ansible Galaxy](#uploading-roles-to-ansible-galaxy)
 8. [Conclusion](#conclusion)
 
 ---
@@ -181,11 +183,11 @@ Ansible relies on SSH keys for secure and passwordless authentication between th
 2. **Copy the Public Key to Managed Nodes**:
    - Use `ssh-copy-id` to copy your public key to the managed nodes:
      ```bash
-     ssh-copy-id -i ~/.ssh/id_rsa.pub <username>@<managed_node_IP>
-     ```
-     Replace `<username>` with the username you use to log in to the managed node, and `<managed_node_IP>` with the IP address of the managed node. This command appends your public key to the `
+     ssh-copy-id -i ~/.ssh/id_rsa.pub <username>@<managed_node_IP
 
-~/.ssh/authorized_keys` file on the managed node.
+>
+     ```
+     This command adds the public key to the `~/.ssh/authorized_keys` file on the managed node.
 
 3. **Test SSH Access**:
    - Verify that you can log in to the managed node without a password:
@@ -334,6 +336,69 @@ test/
     enabled: yes
 ```
 This task file ensures that the Apache web server is installed and running on the managed nodes.
+
+### Installing Roles from Ansible Galaxy
+
+Ansible Galaxy is a marketplace for roles where users can find, share, and download roles created by the community. Installing roles from Ansible Galaxy is straightforward:
+
+#### Steps to Install a Role from Ansible Galaxy:
+1. **Search for the Role**:
+   - Visit the Ansible Galaxy website and search for the desired role.
+   - Copy the installation command provided for the role.
+
+2. **Run the Installation Command**:
+   - Execute the command on the control node to install the role:
+     ```bash
+     ansible-galaxy install <role_name>
+     ```
+     This command installs the specified role into the Ansible roles directory.
+
+#### Example:
+```bash
+ansible-galaxy install geerlingguy.apache
+```
+This command installs the Apache role created by the user `geerlingguy`.
+
+#### Checking Installed Roles:
+To list the roles installed on your system, use the following command:
+```bash
+ls ~/.ansible/roles
+```
+This command displays all the roles available in the `.ansible/roles` directory.
+
+### Uploading Roles to Ansible Galaxy
+
+Uploading roles to Ansible Galaxy allows you to share your roles with the community. The process involves creating a new repository on GitHub, initializing and connecting the role directory, pushing the data, and importing the role into Ansible Galaxy.
+
+#### Steps to Upload a Role to Ansible Galaxy:
+
+1. **Create a New Repository on GitHub**:
+   - Create a new repository on GitHub for your role.
+
+2. **Initialize and Connect the Role Directory**:
+   - Navigate to your role directory on the control node and initialize it as a Git repository:
+     ```bash
+     git init
+     ```
+   - Connect the local repository to the GitHub repository:
+     ```bash
+     git remote add origin <GitHub_repo_URL>
+     ```
+
+3. **Push All Data to the Repository**:
+   - Add and commit all files, then push to GitHub:
+     ```bash
+     git add .
+     git commit -m "Initial commit"
+     git push -u origin master
+     ```
+
+4. **Import the Role to Ansible Galaxy**:
+   - Run the following command to import the role into Ansible Galaxy:
+     ```bash
+     ansible-galaxy import <GitHub_username> <GitHub_repo_name> --token <token_from_ansible_galaxy>
+     ```
+   - This command uses your GitHub username, repository name, and an authentication token from Ansible Galaxy to import the role.
 
 ## Conclusion
 
