@@ -1,0 +1,17 @@
+---
+- name: Install and configure apache
+  hosts: all
+  become: true
+  tasks:
+    - name: Install apache2
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+        update_cache: yes
+    - name: copy index.html file
+      ansible.builtin.copy:
+        src: /index.html
+        dest: /var/www/html
+        owner: root
+        group: root
+        mode: '0744'
