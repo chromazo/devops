@@ -1,0 +1,6 @@
+---
+- name: install docker through role
+  hosts: all
+  become: true
+  roles:
+    - bsmeding.docker
