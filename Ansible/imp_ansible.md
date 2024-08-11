@@ -528,7 +528,178 @@ Here’s an example playbook that installs a package only if the operating syste
         state: present
       when: ansible_distribution == "Ubuntu"
 ```
+```
+# Using Ansible to Create Azure VMs with a Loop
 
+## Introduction
+
+This section demonstrates how to use Ansible to create multiple Azure Virtual Machines (VMs) using a loop. This is particularly useful for infrastructure provisioning and network automation tasks where you need to deploy multiple instances of the same resource type.
+
+### Prerequisites
+
+Before running the playbook, ensure you have the following prerequisites in place:
+
+1. **Azure Ansible Collection**: Install the Azure collection with the following command:
+    ```bash
+    ansible-galaxy collection install azure.azcollection
+    ```
+2. **Azure Credentials**: Configure your Azure credentials. This can be done using environment variables, Azure CLI login, or any other supported method.
+
+### Example Playbook: Creating Azure VMs with a Loop
+
+Below is an example playbook to create multiple Azure VMs using a loop. The playbook will perform the following tasks:
+1. Create an Azure resource group.
+2. Create a virtual network within the resource group.
+3. Create a subnet within the virtual network.
+4. Create network interfaces for each VM.
+5. Create the VMs using a loop.
+
+#### Playbook
+
+```yaml
+---
+- name: Create multiple Azure VMs
+  hosts: localhost
+  tasks:
+    - name: Create Azure resource group
+      azure.azcollection.azure_rm_resourcegroup:
+        name: myResourceGroup
+        location: eastus
+
+    - name: Create Azure virtual network
+      azure.azcollection.azure_rm_virtualnetwork:
+        resource_group: myResourceGroup
+        name: myVnet
+        address_prefixes: "10.0.0.0/16"
+
+    - name: Create Azure subnet
+      azure.azcollection.azure_rm_subnet:
+        resource_group: myResourceGroup
+        name: mySubnet
+        address_prefix: "10.0.1.0/24"
+        virtual_network: myVnet
+
+    - name: Create network interfaces
+      azure.azcollection.azure_rm_networkinterface:
+        resource_group: myResourceGroup
+        name: "{{ item.nic_name }}"
+        virtual_network: myVnet
+        subnet: mySubnet
+        ip_configurations:
+          - name: ipconfig1
+            primary: yes
+            private_ip_allocation_method: Dynamic
+        state: present
+      loop:
+        - { nic_name: nic1 }
+        - { nic_name: nic2 }
+        - { nic_name: nic3 }
+
+    - name: Create multiple Azure VMs
+      azure.azcollection.azure_rm_virtualmachine:
+        resource_group: myResourceGroup
+        name: "{{ item.name }}"
+        vm_size: Standard_DS1_v2
+        admin_username: azureuser
+        admin_password: Password1234!
+        image:
+          offer: CentOS
+          publisher: OpenLogic
+          sku: '7.6'
+          version: latest
+        network_interfaces: 
+          - name: "{{ item.nic_name }}"
+        state: present
+      loop:
+        - { name: vm1, nic_name: nic1 }
+        - { name: vm2, nic_name: nic2 }
+        - { name: vm3, nic_name: nic3 }
+```
+
+### Step-by-Step Explanation
+
+1. **Create Azure Resource Group**: 
+    This task ensures that the specified resource group (`myResourceGroup`) exists in the `eastus` location.
+    ```yaml
+    - name: Create Azure resource group
+      azure.azcollection.azure_rm_resourcegroup:
+        name: myResourceGroup
+        location: eastus
+    ```
+
+2. **Create Azure Virtual Network**: 
+    This task creates a virtual network (`myVnet`) with the specified address prefix (`10.0.0.0/16`).
+    ```yaml
+    - name: Create Azure virtual network
+      azure.azcollection.azure_rm_virtualnetwork:
+        resource_group: myResourceGroup
+        name: myVnet
+        address_prefixes: "10.0.0.0/16"
+    ```
+
+3. **Create Azure Subnet**: 
+    This task creates a subnet (`mySubnet`) within the virtual network, with the specified address prefix (`10.0.1.0/24`).
+    ```yaml
+    - name: Create Azure subnet
+      azure.azcollection.azure_rm_subnet:
+        resource_group: myResourceGroup
+        name: mySubnet
+        address_prefix: "10.0.1.0/24"
+        virtual_network: myVnet
+    ```
+
+4. **Create Network Interfaces**: 
+    This task creates the necessary network interfaces for each VM. The loop iterates over the list of network interface definitions, creating each interface with the specified configuration.
+    ```yaml
+    - name: Create network interfaces
+      azure.azcollection.azure_rm_networkinterface:
+        resource_group: myResourceGroup
+        name: "{{ item.nic_name }}"
+        virtual_network: myVnet
+        subnet: mySubnet
+        ip_configurations:
+          - name: ipconfig1
+            primary: yes
+            private_ip_allocation_method: Dynamic
+        state: present
+      loop:
+        - { nic_name: nic1 }
+        - { nic_name: nic2 }
+        - { nic_name: nic3 }
+    ```
+
+5. **Create Azure VMs**: 
+    This task uses the `azure_rm_virtualmachine` module to create multiple VMs. The loop iterates over the list of VM definitions, creating each VM with the specified parameters.
+    ```yaml
+    - name: Create multiple Azure VMs
+      azure.azcollection.azure_rm_virtualmachine:
+        resource_group: myResourceGroup
+        name: "{{ item.name }}"
+        vm_size: Standard_DS1_v2
+        admin_username: azureuser
+        admin_password: Password1234!
+        image:
+          offer: CentOS
+          publisher: OpenLogic
+          sku: '7.6'
+          version: latest
+        network_interfaces: 
+          - name: "{{ item.nic_name }}"
+        state: present
+      loop:
+        - { name: vm1, nic_name: nic1 }
+        - { name: vm2, nic_name: nic2 }
+        - { name: vm3, nic_name: nic3 }
+    ```
+
+### Conclusion
+
+By using loops in Ansible, you can efficiently create multiple instances of resources, such as VMs in Azure. This approach not only saves time but also ensures consistency and scalability in your infrastructure automation tasks.
+
+Feel free to customize the playbook according to your specific requirements and expand it with additional tasks as needed.
+```
+
+This Markdown content provides a comprehensive and professional explanation, suitable for documenting your Ansible learning journey on GitHub.
 ## Conclusion
 
 Ansible is a powerful and flexible automation tool that simplifies the management of complex IT environments. By leveraging its features, such as agentless architecture, YAML-based configuration, and modular roles, you can streamline your workflows and ensure consistency across your systems. This comprehensive guide provides a foundation for understanding and using Ansible effectively, enabling you to harness its full potential in your automation and orchestration tasks.
