@@ -528,14 +528,14 @@ Here’s an example playbook that installs a package only if the operating syste
         state: present
       when: ansible_distribution == "Ubuntu"
 ```
-```
-# Using Ansible to Create Azure VMs with a Loop
 
-## Introduction
+## Using Ansible to Create Azure VMs with a Loop
+
+#### Introduction
 
 This section demonstrates how to use Ansible to create multiple Azure Virtual Machines (VMs) using a loop. This is particularly useful for infrastructure provisioning and network automation tasks where you need to deploy multiple instances of the same resource type.
 
-### Prerequisites
+#### Prerequisites
 
 Before running the playbook, ensure you have the following prerequisites in place:
 
@@ -545,7 +545,7 @@ Before running the playbook, ensure you have the following prerequisites in plac
     ```
 2. **Azure Credentials**: Configure your Azure credentials. This can be done using environment variables, Azure CLI login, or any other supported method.
 
-### Example Playbook: Creating Azure VMs with a Loop
+####Example Playbook: Creating Azure VMs with a Loop
 
 Below is an example playbook to create multiple Azure VMs using a loop. The playbook will perform the following tasks:
 1. Create an Azure resource group.
@@ -691,15 +691,9 @@ Below is an example playbook to create multiple Azure VMs using a loop. The play
         - { name: vm2, nic_name: nic2 }
         - { name: vm3, nic_name: nic3 }
     ```
-
-### Conclusion
-
-By using loops in Ansible, you can efficiently create multiple instances of resources, such as VMs in Azure. This approach not only saves time but also ensures consistency and scalability in your infrastructure automation tasks.
-
-Feel free to customize the playbook according to your specific requirements and expand it with additional tasks as needed.
 ```
 
-This Markdown content provides a comprehensive and professional explanation, suitable for documenting your Ansible learning journey on GitHub.
+```
 ## Conclusion
 
 Ansible is a powerful and flexible automation tool that simplifies the management of complex IT environments. By leveraging its features, such as agentless architecture, YAML-based configuration, and modular roles, you can streamline your workflows and ensure consistency across your systems. This comprehensive guide provides a foundation for understanding and using Ansible effectively, enabling you to harness its full potential in your automation and orchestration tasks.
