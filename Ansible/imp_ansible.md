@@ -22,7 +22,10 @@
    - [Ansible Roles](#ansible-roles)
      - [Installing Roles from Ansible Galaxy](#installing-roles-from-ansible-galaxy)
      - [Uploading Roles to Ansible Galaxy](#uploading-roles-to-ansible-galaxy)
-8. [Conclusion](#conclusion)
+   - [Ansible Collections for API Interaction](#Ansible-Collections-for-API-Interaction)
+   - [Looping in Ansible](#Looping-in-Ansible)
+8. [Using Ansible to Create Azure VMs with a Loop](#Using-Ansible-to-Create-Azure-VMs-with-a-Loop)
+9. [Conclusion](#conclusion)
 
 ---
 
