@@ -1,0 +1,5 @@
+---
+- name: Create Azure vm
+  hosts: localhost
+  roles:
+    - azure

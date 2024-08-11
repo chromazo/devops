@@ -1,0 +1,40 @@
+---
+- name: Create a resource group
+  azure_rm_resourcegroup:
+    name: myResourceGroup
+    location: westus
+    tags:
+        testing: testing
+        delete: never
+
+- name: Create a virtual network
+  azure_rm_virtualnetwork:
+    resource_group: myResourceGroup
+    name: myVirtualNetwork
+    address_prefixes_cidr:
+        - "10.1.0.0/26"
+    tags:
+        testing: testing
+        delete: on-exit
+
+- name: Create a subnet
+  azure_rm_subnet:
+    resource_group: myResourceGroup
+    virtual_network_name: myVirtualNetwork
+    name: mySubnet
+    address_prefix_cidr: "10.1.0.0/27"
+
+- name: Create VM with defaults
+  azure_rm_virtualmachine:
+    resource_group: myResourceGroup
+    name: testvm10
+    vm_size: Standard_B1ms
+    managed_disk_type: Standard_LRS
+    os_disk_size_gb: 128
+    admin_username: chouseknecht
+    admin_password: Shivam@23456
+    image:
+      offer: 0001-com-ubuntu-server-jammy
+      publisher: canonical
+      sku: 22_04-lts-gen2
+      version: latest
