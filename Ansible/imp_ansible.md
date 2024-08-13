@@ -894,9 +894,6 @@ Combining these concepts, here is a comprehensive example that demonstrates erro
       ansible.builtin.debug:
         var: result
 
-
----
-
 ```
 ## Conclusion
 
