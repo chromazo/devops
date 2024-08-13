@@ -25,7 +25,7 @@
    - [Ansible Collections for API Interaction](#Ansible-Collections-for-API-Interaction)
    - [Looping in Ansible](#Looping-in-Ansible)
 8. [Using Ansible to Create Azure VMs with a Loop](#Using-Ansible-to-Create-Azure-VMs-with-a-Loop)
-9. 
+9. [Error Handling in Ansible]
 10. [Conclusion](#conclusion)
 
 ---
@@ -700,7 +700,7 @@ Below is an example playbook to create multiple Azure VMs using a loop. The play
 
 ## Error Handling in Ansible
 
-Error handling is a crucial part of automation scripts, ensuring that your playbooks can manage unexpected situations gracefully. Ansible provides several mechanisms for handling errors, including `ignore_errors`, `register`, `failed_when`, `block/rescue/always`, `retries`, and `until`. Let's delve into each of these concepts with examples.
+Error handling is a crucial part of automation scripts, ensuring that your playbooks can manage unexpected situations gracefully. Ansible provides several mechanisms for handling errors, including `ignore_errors`, `register`, `failed_when`, `block/rescue/always`, `retries`, and `until`.
 
 ### `ignore_errors`
 
