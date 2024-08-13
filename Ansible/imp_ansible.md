@@ -695,6 +695,211 @@ Below is an example playbook to create multiple Azure VMs using a loop. The play
         - { name: vm3, nic_name: nic3 }
     ```
 ```
+Here are some additional error handling methods commonly used in Ansible, elaborated with explanations and examples to be added to your GitHub markdown documentation.
+
+---
+
+## Error Handling in Ansible
+
+Error handling is a crucial part of automation scripts, ensuring that your playbooks can manage unexpected situations gracefully. Ansible provides several mechanisms for handling errors, including `ignore_errors`, `register`, `failed_when`, `block/rescue/always`, `retries`, and `until`. Let's delve into each of these concepts with examples.
+
+### `ignore_errors`
+
+The `ignore_errors` directive allows a task to continue executing even if it encounters an error. This can be useful in scenarios where you want the playbook to proceed regardless of the outcome of a particular task.
+
+#### Example
+
+```yaml
+- name: Attempt to install a package that might not exist
+  apt:
+    name: non_existent_package
+    state: present
+  ignore_errors: yes
+
+- name: Continue with other tasks
+  debug:
+    msg: "This task runs even if the previous one fails."
+```
+
+### `register`
+
+The `register` directive is used to store the output of a task in a variable. This allows you to use the output in subsequent tasks, making it possible to make decisions based on previous task results.
+
+#### Example
+
+```yaml
+- name: Check if a file exists
+  stat:
+    path: /tmp/myfile
+  register: file_status
+
+- name: Print the status of the file
+  ansible.builtin.debug:
+    var: file_status
+```
+
+### `ansible.builtin.debug`
+
+The `ansible.builtin.debug` module is used to print variables or messages to the console. This is particularly useful for debugging and verifying the values of variables during playbook execution.
+
+#### Example
+
+```yaml
+- name: Run a command and register the output
+  command: /bin/echo "Hello, World!"
+  register: command_output
+
+- name: Print the output of the command
+  ansible.builtin.debug:
+    var: command_output
+```
+
+### `failed_when`
+
+The `failed_when` directive allows you to specify conditions under which a task should be considered failed. This is useful for implementing custom failure criteria based on the output of a task.
+
+#### Example
+
+```yaml
+- name: Run a command that may fail
+  command: /bin/false
+  register: result
+  failed_when: result.rc != 0
+
+- name: Print a message if the previous task failed
+  ansible.builtin.debug:
+    msg: "The previous task failed as expected."
+  when: result.failed
+```
+
+### `block`, `rescue`, `always`
+
+The `block`, `rescue`, and `always` directives allow you to group tasks together and define error handling and cleanup actions in a structured manner.
+
+#### Example
+
+```yaml
+- name: Example of block, rescue, and always
+  hosts: localhost
+  tasks:
+    - name: Start block
+      block:
+        - name: Run a command that fails
+          command: /bin/false
+          register: result
+        - name: This will not run because the previous task failed
+          debug:
+            msg: "This task is skipped."
+
+      rescue:
+        - name: Handle the error
+          debug:
+            msg: "Error occurred, running rescue block."
+        - name: Retry the failed command
+          command: /bin/true
+
+      always:
+        - name: Cleanup actions
+          debug:
+            msg: "This task always runs, regardless of failure or success."
+```
+
+### `retries` and `until`
+
+The `retries` and `until` directives are used to retry a task until a specific condition is met or a maximum number of retries is reached. This is useful for tasks that might fail initially but are expected to succeed after a few attempts.
+
+#### Example
+
+```yaml
+- name: Attempt to connect to a service
+  uri:
+    url: http://example.com
+  register: result
+  retries: 5
+  delay: 10
+  until: result.status == 200
+
+- name: Print the result of the connection attempt
+  ansible.builtin.debug:
+    var: result
+```
+
+### Comprehensive Example
+
+Combining these concepts, here is a comprehensive example that demonstrates error handling, output registration, and conditional task execution.
+
+```yaml
+---
+- name: Comprehensive error handling example
+  hosts: localhost
+  tasks:
+    - name: Attempt to install a non-existent package
+      apt:
+        name: non_existent_package
+        state: present
+      ignore_errors: yes
+      register: install_result
+
+    - name: Print the result of the package installation
+      ansible.builtin.debug:
+        var: install_result
+
+    - name: Run a command that may fail
+      command: /bin/false
+      register: command_result
+      failed_when: command_result.rc != 0
+
+    - name: Print a message if the command failed
+      ansible.builtin.debug:
+        msg: "The command failed."
+      when: command_result.failed
+
+    - name: Check if a file exists
+      stat:
+        path: /tmp/myfile
+      register: file_check
+
+    - name: Print the status of the file
+      ansible.builtin.debug:
+        var: file_check
+
+    - name: Example of block, rescue, and always
+      block:
+        - name: Run a command that fails
+          command: /bin/false
+          register: result
+        - name: This will not run because the previous task failed
+          debug:
+            msg: "This task is skipped."
+
+      rescue:
+        - name: Handle the error
+          debug:
+            msg: "Error occurred, running rescue block."
+        - name: Retry the failed command
+          command: /bin/true
+
+      always:
+        - name: Cleanup actions
+          debug:
+            msg: "This task always runs, regardless of failure or success."
+
+    - name: Attempt to connect to a service
+      uri:
+        url: http://example.com
+      register: result
+      retries: 5
+      delay: 10
+      until: result.status == 200
+
+    - name: Print the result of the connection attempt
+      ansible.builtin.debug:
+        var: result
+```
+
+This comprehensive example ensures robust error handling and output management in your Ansible playbooks, incorporating various techniques to handle different error scenarios effectively.
+
+---
 
 ```
 ## Conclusion
