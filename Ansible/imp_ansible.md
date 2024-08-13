@@ -25,7 +25,7 @@
    - [Ansible Collections for API Interaction](#Ansible-Collections-for-API-Interaction)
    - [Looping in Ansible](#Looping-in-Ansible)
 8. [Using Ansible to Create Azure VMs with a Loop](#Using-Ansible-to-Create-Azure-VMs-with-a-Loop)
-9. [Error Handling in Ansible](Error-Handling-in-Ansible)
+9. [Error Handling in Ansible](#Error-Handling-in-Ansible)
 10. [Conclusion](#conclusion)
 
 ---
