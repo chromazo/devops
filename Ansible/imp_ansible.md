@@ -694,8 +694,6 @@ Below is an example playbook to create multiple Azure VMs using a loop. The play
         - { name: vm2, nic_name: nic2 }
         - { name: vm3, nic_name: nic3 }
     ```
-```
-Here are some additional error handling methods commonly used in Ansible, elaborated with explanations and examples to be added to your GitHub markdown documentation.
 
 ---
 
@@ -895,7 +893,7 @@ Combining these concepts, here is a comprehensive example that demonstrates erro
     - name: Print the result of the connection attempt
       ansible.builtin.debug:
         var: result
-```
+
 
 ---
 
