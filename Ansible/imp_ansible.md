@@ -897,8 +897,6 @@ Combining these concepts, here is a comprehensive example that demonstrates erro
         var: result
 ```
 
-This comprehensive example ensures robust error handling and output management in your Ansible playbooks, incorporating various techniques to handle different error scenarios effectively.
-
 ---
 
 ```
