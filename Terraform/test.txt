@@ -1,0 +1,37 @@
+AWS CFT, azure ARM, etc --> Infrastructure as code (IaC)
+
+Terraform --> API as code
+create terraform scripts and it will help automate any provider tasks (aws,azure,etc) using their api's
+-- easily migrate from one platform to another with minimal changes
+
+API (application interface) --> to programmatically talk with any application
+
+Advantages of terraform
+-- Manage any Infrastructure
+-- Track your infrastructure
+-- automate changes
+-- standardized configuration
+-- collaborate
+
+terraform site --> search "terraform hashicorp azure"
+
+Terraform lifecycle -->
+-- Write
+-- plan (option to dry run)
+-- apply
+-- destroy
+
+install terraform -- Linux ubuntu/debian
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+
+sudo apt update && sudo apt install terraform
+
+latest terraform version: Terraform v1.9.5
+
+Terraform files are called HCL((HashiCorp Configuration Language) files
+
+
+
+
