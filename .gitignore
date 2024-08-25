@@ -10,3 +10,17 @@ y
 y.pub
 inventory
 .viminfo
+.ICEauthority
+.Xauthority
+.azure/
+.config/
+.dotnet/
+.local/
+.pki/
+.terraform.d/
+.vscode/
+.xorgxrdp.10.log
+.xorgxrdp.10.log.old
+.xsession
+.xsession-errors
+snap/
