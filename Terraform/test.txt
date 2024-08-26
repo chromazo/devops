@@ -49,4 +49,11 @@ output printName {
     value = "Hello, ${var.username}"
 }
 
-define a variable while runnning "terraform plan" command not taking input from user --> terraform plan - "username=John" 
+define a variable while running "terraform plan" command not taking input from user --> terraform plan - "username=John"
+
+Terrform takes input from user for a variable if it is not set, if a value is provided, input from user will not be taken
+eg:
+variable name {
+	default = "John"
+}
+here the default value of variable name is set to "John", hence no input will be taken for name variable
