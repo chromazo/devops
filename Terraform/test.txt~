@@ -49,4 +49,4 @@ output printName {
     value = "Hello, ${var.username}"
 }
 
-define a variable while runnning "terraform plan" command not taking input from user --> terraform plan - "username=John" 
+
