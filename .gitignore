@@ -23,4 +23,7 @@ inventory
 .xorgxrdp.10.log.old
 .xsession
 .xsession-errors
+.wget-hsts
+Pictures/
+thinclient_drives
 snap/
