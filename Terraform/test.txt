@@ -32,6 +32,21 @@ latest terraform version: Terraform v1.9.5
 
 Terraform files are called HCL((HashiCorp Configuration Language) files
 
+## if there are multiple terraform files in a directory, when we run "terraform plan' command it will read all the files and will provide us with output of each files
+the files are loaded in alphabetical order
 
+We use "output" block to print data
+output <lable> {
+    value = ""
+}
+
+we use "variable" block to assign a variable
+Below command takes input from user and assigns it to a variable "username"
+variable username {}
+
+below command is used to print text along with variable data
+output printName {
+    value = "Hello, ${var.username}"
+}
 
 
