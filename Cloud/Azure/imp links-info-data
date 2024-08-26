@@ -1,1 +1,4 @@
 -- how to transfer snapshot from one region to another https://lepczynski.it/en/azure_en/how-to-move-a-vm-disk-snapshot-to-another-region/
+
+-- to store ssh private key in keyvault to access vm command
+az keyvault secret set --vault-name <key vault name> --name <new secret name> --encoding ascii --file <private key file path>
