@@ -1,6 +1,10 @@
+# variable "user_name" {
+#     type = list
+#     default = ["shiv","john"]
+# }
+
 variable "user_name" {
-    type = list
-    default = ["shiv","john"]
+    type = string
 }
 
 variable "user_age" {
