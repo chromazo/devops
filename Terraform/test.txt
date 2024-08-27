@@ -57,3 +57,5 @@ variable name {
 	default = "John"
 }
 here the default value of variable name is set to "John", hence no input will be taken for name variable
+
+terraform ".tfvars" file is used to store all the variable data, once we run "terraform plan" it takes the variable value from here
