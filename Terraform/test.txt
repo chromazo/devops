@@ -59,3 +59,8 @@ variable name {
 here the default value of variable name is set to "John", hence no input will be taken for name variable
 
 terraform "terraform.tfvars" file is used to store all the variable data, once we run "terraform plan" it takes the variable value from here. If we needa custom named tfvars file, yhe we need to use "-var-file=<tfvars file name>" with terraform plan command. eg: terraform plan -var-file=develop.tfvars
+
+use "export" command in linux to define a environment variable, eg: export userName=john.
+if we want terraform to get this environment variable as input, then we need to put a prefix in the environment variable name --> "TF_VAR_"
+eg: export TF_VAR_userName=john
+now the script will the variable as input.
