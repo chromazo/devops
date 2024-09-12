@@ -18,7 +18,9 @@ namespace test1
             /*
              * there are many datatypes here, like
              * int -- 4 byte
+             * long -- 8 byte
              * float -- 4 byte
+             * double -- 8 byte
              * char -- 2 byte
              * string  -- 2 byte per character
              * boolean  -- 1 bit
